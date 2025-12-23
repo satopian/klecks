@@ -950,6 +950,10 @@ export class KlApp {
                 if (['delete', 'backspace'].includes(comboStr)) {
                     clearLayer(true);
                 }
+                if (comboStr === 'ctrl+shift+e' || comboStr === 'shift+ctrl+e') {
+                    event.preventDefault();
+                    this.layersUi.advancedMergeDialog();
+                }
                 if (comboStr === 'shift+e') {
                     event.preventDefault();
                     currentBrushUi.toggleEraser?.();
